@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+	{% block refresh_rate %}<meta http-equiv="refresh" content="30">{% endblock %}
+    <title>{% block title %}Tic Tac Toe Game{% endblock %}</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css"%}">
+	
+	<script src="{%  static "assets/js/jquery-1.10.1.min.js"%}"></script>
+    <script src="{% static "assets/js/jquery-migrate-1.2.1.min.js" %}"></script>
+	{% block jc %}{% endblock %}
+</head>
+
+<body>
+    <div id="page">
+
+		<div id="sidebar">
+			{% block sidebar %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li>User: {{ user }}</li>
+                <li>Points: {{ user.profile.points }}</li>
+                <li>{{ user }} is better than {{ rank }}% of all players so far</li>
+                <li></li>
+                <li><a href="/accounts/logout/">Log Out</a></li>
+                {% if not user.profile.is_host and not user.profile.in_game%}
+                <li><a href="/game/host_game/">Start New Game</a></li>
+                {% endif %}
+            {% else %}
+                <li><a href="/accounts/login/">Log In</a></li>
+                <li><a href="/accounts/register/">Register</a></li>
+            {% endif %}
+            </ul>
+			{% endblock %}
+		</div>
+		
+		<div id="content">
+			{% block content %}Content area{% endblock %}
+		</div>
+	
+	</div>
+</body>
+</html>

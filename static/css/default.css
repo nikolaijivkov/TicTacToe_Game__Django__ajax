@@ -1,0 +1,57 @@
+body {
+	text-align: center;
+    background-color: #fcffe0;
+}
+
+#page {
+	width: 960px;
+	text-align: left;
+	margin: 5px auto 5px auto;
+}
+
+#sidebar{
+	float: left;
+	width: 250px;
+	border: 3px solid #38a2dd;
+}
+
+#content{
+	float: left;
+	width: 600px;
+	border: 3px solid #e83334;
+}
+
+#top_ten{
+    float: left;
+    width: 400px;
+}
+
+#join_game{
+    float: left;
+    width: 200px;
+}
+
+ul, p{
+	list-style: none;
+    padding: 0px 10px 0px 15px
+}
+
+li{
+	display: inline-block;
+	width: 100%;
+}
+
+td#game{
+  background-color: #ffdf9b;
+}
+
+img#game{
+  float:left;
+  width:100px;
+  height:100px;
+}
+
+img#a{
+  width:100px;
+  height:100px;
+}

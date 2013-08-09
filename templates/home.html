@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="top_ten">
+        <p>TOP TEN:</p>
+        <ul>
+        {% for profile in first_ten %}
+            <li>User: {{ profile.user }}, Points: {{ profile.points }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div id="join_game">
+        <p>JOIN GAME:</p>
+        <ul>
+        {% for game in games %}
+            <li><a href="/game/join_game/{{ game.id }}">{{ game.host_player.user }}'s game</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

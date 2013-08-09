@@ -1,0 +1,48 @@
+{% load static %}
+
+{% if reload_page %}
+<script>
+window.location.reload(true);
+</script>
+
+{% else %}
+<table border="12">
+    <tr>
+      <td id="game">
+        {% if pos00 %}<img border=0 id="game" src="{% static pic00 %}" alt={{ pos00 }}>{% else %}<a id="game" href="/game/move/0/0/"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos01 %}<img id="game" src="{% static pic01 %}" alt={{ pos01 }}>{% else %}<a href="/game/move/0/1/"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos02 %}<img id="game" src="{% static pic02 %}" alt={{ pos02 }}>{% else %}<a href="/game/move/0/2/"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td id="game">
+        {% if pos10 %}<img id="game" src="{% static pic10 %}" alt={{ pos10 }}>{% else %}<a href="/game/move/1/0"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos11 %}<img id="game" src="{% static pic11 %}" alt={{ pos11 }}>{% else %}<a href="/game/move/1/1"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos12 %}<img id="game" src="{% static pic12 %}" alt={{ pos12 }}>{% else %}<a href="/game/move/1/2"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td id="game">
+        {% if pos20 %}<img id="game" src="{% static pic20 %}" alt={{ pos20 }}>{% else %}<a href="/game/move/2/0"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos21 %}<img id="game" src="{% static pic21 %}" alt={{ pos21 }}>{% else %}<a href="/game/move/2/1"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+      <td id="game">
+        {% if pos22 %}<img id="game" src="{% static pic22 %}" alt={{ pos22 }}>{% else %}<a href="/game/move/2/2"><img id="game" border="0" src="{% static "assets/images/Empty.png" %}" alt="_"></a>{% endif %}
+      </td>
+    </tr>
+</table>
+<p>On Turn: {{ on_turn }}</p>
+<p>Turn Time: {{ time_left.seconds }} seconds left</p>
+{% endif %}
+
+
